@@ -1,10 +1,14 @@
+use agb;
+pub static TITLE_FONT: agb::display::Font = agb::include_font!("fnt/HackNerdFontMono-Bold.ttf", 12);
+
 pub struct Init {}
 
 impl crate::gamestate::GameState for Init {
     fn new() -> Self {
         Self {}
     }
-    fn init(&mut self, gba: &mut agb::Gba) {}
+    fn init(&mut self, gba: &mut agb::Gba) {
+    }
     fn draw(&mut self, gba: &mut agb::Gba) {
         agb::println!("HELLO WORLD");
     }

@@ -23,6 +23,8 @@ mod gamestate;
 fn main(mut gba: agb::Gba) -> ! {
     let mut state = gamestate::State::new();
     loop {
-        state.cycle(&mut gba);
+        if let Some(new_state) = state.cycle(&mut gba) {
+            state = new_state;
+        }
     }
 }
